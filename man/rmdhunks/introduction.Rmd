@@ -1,0 +1,115 @@
+The goal of {epidict} is to provide standardized data dictionaries for use in 
+epidemiological data analysis templates. Currently it supports standardised 
+dictionaries from MSF OCA. 
+This is a product of the R4EPIs project; learn more at <https://r4epi.github.io/sitrep/>
+
+## Installation
+
+You can install {epidict} from CRAN:
+
+``` r
+install.packages("epidict")
+```
+
+<details>
+<!--
+NOTE: everything inside the details tag will be collapsed and effectively
+hidden from the user
+-->
+<summary style='text-decoration: underline'>Click here for alternative installation options</summary>
+If there is a bugfix or feature that is not yet on CRAN, you can install it via
+the {drat} package:
+
+You can also install the in-development version from GitHub using the {remotes}
+package (but there's no guarantee that it will be stable):
+
+```{r eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("R4EPI/epidict") 
+```
+
+</details>
+
+
+## Accessing dictionaries
+
+The dictionaries can be obtained via the `msf_dict()` function, which specifies a
+variable and their possible options (if categorical).
+
+There are MSF intersectional outbreak dictionaries available in {epidict}
+based on ODK exports. 
+
+There are MSF OCA outbreak dictionaries available in {epidict} based on DHIS2
+exports.
+> You can read more about the outbreak dictionaries at <https://r4epi.github.io/epidict/articles/Outbreaks.html>
+
+
+In addition, there are MSF survey dictionaries available based on 
+ODK exports. 
+> You can read more about the survey dictionaries at <https://r4epi.github.io/epidict/articles/Surveys.html>
+
+
+You can also read in your own ODK dictionaries using `read_dict()`. 
+
+## Generating data
+
+The {epidict} package has a function for generating data that's called
+`gen_data()`, which takes three arguments: The dictionary, which column
+describes the variable names, and how many rows are needed in the output.
+
+<details>
+<!--
+NOTE: everything inside the details tag will be collapsed and effectively
+hidden from the user
+-->
+<summary style='text-decoration: underline'>Click here for code examples </summary>
+
+```{r gendata}
+library("epidict")
+gen_data("Measles", varnames = "data_element_shortname", numcases = 100, org = "MSF")
+gen_data("Vaccination_long", varnames = "name", numcases = 100, org = "MSF")
+```
+
+</details>
+
+## Cleaning data with the dictionaries
+
+You can use the dictionaries to clean the data via the [{matchmaker}](https://www.repidemicsconsortium.org/matchmaker/) package:
+
+<details>
+<!--
+NOTE: everything inside the details tag will be collapsed and effectively
+hidden from the user
+-->
+<summary style='text-decoration: underline'>Click here for code examples </summary>
+
+```{r lookup, message = FALSE}
+library("matchmaker")
+library("dplyr")
+
+dat <- gen_data(dictionary = "Cholera", 
+  varnames = "data_element_shortname",
+  numcases = 20,
+  org = "MSF"
+)
+print(dat)
+
+# We want the expanded dictionary, so we will select `compact = FALSE`
+dict <- msf_dict(dictionary = "Cholera", 
+  long    = TRUE,
+  compact = FALSE,
+  tibble  = TRUE
+)
+print(dict)
+
+# Now we can use matchmaker to filter the data
+dat_clean <- matchmaker::match_df(dat, dict, 
+  from  = "option_code",
+  to    = "option_name",
+  by    = "data_element_shortname",
+  order = "option_order_in_set"
+)
+print(dat_clean)
+```
+
+</details>

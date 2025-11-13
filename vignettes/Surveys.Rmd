@@ -1,0 +1,119 @@
+---
+title: "MSF Survey Dictionaries"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{MSF Survey Dictionaries}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = FALSE
+)
+```
+
+The currently available MSF survey dictionaries:
+
+ - Retrospective mortality and access to care ("Mortality")
+ - Malnutrition ("Nutrition") 
+ - Vaccination coverage long form ("Vaccination_long")
+ - Vaccination coverage short form ("vaccination_short")
+ - Event based surveillance ("ebs")
+
+# Retrospective mortality and access to care ("mortality")
+
+## Variables in the dictionary
+
+The Mortality dictionary contains definitions for `r nrow(epidict::msf_dict("Mortality"))` variables:
+
+```{r mortality, results="asis"}
+library(epidict)
+mortality <- msf_dict("Mortality", compact = TRUE)
+names_desc <- mortality[c("name", "label_english", "value_type")]
+DT::datatable(names_desc)
+```
+
+## Option codes
+
+The dictionaries are exported using option codes that can be translated to
+human-readable format. This table shows how they are translated.
+
+```{r mortality_values, results = "asis"}
+mortality_codes <- tidyr::unnest(mortality, cols = options)[c("name", "value_type", "option_name", "option_label_english", "option_order_in_set")]
+DT::datatable(mortality_codes)
+```
+
+# Malnutrition ("nutrition") 
+
+## Variables in the dictionary
+
+The Nutrition dictionary contains definitions for `r nrow(epidict::msf_dict("Nutrition"))` variables:
+
+```{r nutrition, results="asis"}
+library(epidict)
+nutrition <- msf_dict("Nutrition", compact = TRUE)
+names_desc <- nutrition[c("name", "label_english", "value_type")]
+DT::datatable(names_desc)
+```
+
+## Option codes
+
+The dictionaries are exported using option codes that can be translated to
+human-readable format. This table shows how they are translated.
+
+```{r nutrition_values, results = "asis"}
+nutrition_codes <- tidyr::unnest(nutrition, cols = options)[c("name", "value_type", "option_name", "option_label_english", "option_order_in_set")]
+DT::datatable(nutrition_codes)
+```
+
+# Vaccination Coverage ("vaccination_long" or "Vaccination_short")
+
+## Variables in the dictionary
+There are two Vaccination dictionaries - a long form and a short form.  
+The Vaccination long dictionary contains definitions for `r nrow(epidict::msf_dict("Vaccination_long"))` variables:
+
+```{r vaccination_long, results="asis"}
+library(epidict)
+vaccination_long <- msf_dict("Vaccination_long", compact = TRUE)
+names_desc_long <- vaccination_long[c("name", "label_english", "value_type")]
+DT::datatable(names_desc_long)
+```
+
+The Vaccination short dictionary contains definitions for `r nrow(epidict::msf_dict("Vaccination_short"))` variables:
+
+```{r vaccination_short, results="asis"}
+library(epidict)
+vaccination_short <- msf_dict("Vaccination_short", compact = TRUE)
+names_desc_short <- vaccination_short[c("name", "label_english", "value_type")]
+DT::datatable(names_desc_short)
+```
+
+
+## Option codes
+
+The dictionaries are exported using option codes that can be translated to
+human-readable format. This table shows how they are translated.  
+
+For vaccination long:  
+```{r vaccination_long_values, results = "asis"}
+vaccination_codes_long <- tidyr::unnest(vaccination_long, cols = options)[c("name", "value_type", "option_name", "option_label_english", "option_order_in_set")]
+DT::datatable(vaccination_codes_long)
+```
+
+For vaccination short:  
+
+```{r vaccination_short_values, results = "asis"}
+vaccination_codes_short <- tidyr::unnest(vaccination_short, cols = options)[c("name", "value_type", "option_name", "option_label_english", "option_order_in_set")]
+DT::datatable(vaccination_codes_short)
+```
+
+
+# Exploring the dictionaries
+
+You can explore the excel-formatted dictionaries with `browseURL(system.file("extdata", "MSF-survey-dict.xlsx", package = "epidict"))`, but treat it as read-only.
+
