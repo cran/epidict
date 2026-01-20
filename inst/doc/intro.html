@@ -48,8 +48,9 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +61,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -398,16 +399,16 @@ Click here for code examples
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 100 × 52</span></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt;    case_number date_of_consultation_admis…¹ patient_facility_type patient_origin</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;date&gt;                       &lt;fct&gt;                 &lt;chr&gt;         </span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  1 A1          2018-03-28                   OP                    Village C     </span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  2 A2          2018-03-06                   OP                    Village D     </span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  3 A3          2018-04-10                   IP                    Village A     </span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  4 A4          2018-03-22                   IP                    Village C     </span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  5 A5          2018-01-13                   IP                    Village C     </span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  6 A6          2018-02-28                   IP                    Village D     </span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  7 A7          2018-02-10                   IP                    Village A     </span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt;  8 A8          2018-04-26                   IP                    Village D     </span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;  9 A9          2018-02-16                   OP                    Village C     </span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 10 A10         2018-02-22                   OP                    Village C     </span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;  1 A1          2018-03-12                   OP                    Village D     </span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;  2 A2          2018-04-08                   OP                    Village C     </span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;  3 A3          2018-04-18                   IP                    Village C     </span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;  4 A4          2018-01-18                   OP                    Village C     </span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;  5 A5          2018-03-21                   OP                    Village C     </span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;  6 A6          2018-02-28                   OP                    Village D     </span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;  7 A7          2018-03-08                   IP                    Village A     </span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt;  8 A8          2018-01-07                   IP                    Village C     </span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;  9 A9          2018-04-16                   IP                    Village C     </span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 10 A10         2018-01-26                   IP                    Village B     </span></span>
 <span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 90 more rows</span></span>
 <span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; # ℹ abbreviated name: ¹​date_of_consultation_admission</span></span>
 <span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; # ℹ 48 more variables: age_years &lt;int&gt;, age_months &lt;int&gt;, age_days &lt;int&gt;,</span></span>
@@ -419,16 +420,16 @@ Click here for code examples
 <span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt; # A tibble: 100 × 120</span></span>
 <span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt;    start end   today deviceid date       team_number village_name village_other</span></span>
 <span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt;    &lt;lgl&gt; &lt;lgl&gt; &lt;lgl&gt; &lt;lgl&gt;    &lt;date&gt;     &lt;lgl&gt;       &lt;fct&gt;        &lt;lgl&gt;        </span></span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt;  1 NA    NA    NA    NA       2018-03-26 NA          village_8    NA           </span></span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt;  2 NA    NA    NA    NA       2018-04-21 NA          other        NA           </span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt;  3 NA    NA    NA    NA       2018-01-24 NA          village_9    NA           </span></span>
-<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt;  4 NA    NA    NA    NA       2018-01-06 NA          village_9    NA           </span></span>
-<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt;  5 NA    NA    NA    NA       2018-03-09 NA          village_8    NA           </span></span>
-<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt;  6 NA    NA    NA    NA       2018-03-17 NA          village_2    NA           </span></span>
-<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt;  7 NA    NA    NA    NA       2018-01-20 NA          other        NA           </span></span>
-<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt;  8 NA    NA    NA    NA       2018-01-19 NA          village_10   NA           </span></span>
-<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt;  9 NA    NA    NA    NA       2018-03-26 NA          village_4    NA           </span></span>
-<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt; 10 NA    NA    NA    NA       2018-03-03 NA          village_5    NA           </span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt;  1 NA    NA    NA    NA       2018-02-19 NA          village_5    NA           </span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt;  2 NA    NA    NA    NA       2018-03-11 NA          village_5    NA           </span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt;  3 NA    NA    NA    NA       2018-01-20 NA          village_6    NA           </span></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt;  4 NA    NA    NA    NA       2018-03-28 NA          village_1    NA           </span></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt;  5 NA    NA    NA    NA       2018-04-08 NA          other        NA           </span></span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt;  6 NA    NA    NA    NA       2018-04-30 NA          village_3    NA           </span></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt;  7 NA    NA    NA    NA       2018-04-21 NA          village_1    NA           </span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt;  8 NA    NA    NA    NA       2018-01-25 NA          village_6    NA           </span></span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt;  9 NA    NA    NA    NA       2018-01-09 NA          village_3    NA           </span></span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt; 10 NA    NA    NA    NA       2018-03-04 NA          village_8    NA           </span></span>
 <span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co">#&gt; # ℹ 90 more rows</span></span>
 <span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co">#&gt; # ℹ 112 more variables: cluster_number &lt;dbl&gt;, household_number &lt;int&gt;,</span></span>
 <span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a><span class="co">#&gt; #   households_building &lt;int&gt;, random_hh &lt;int&gt;, consent &lt;chr&gt;,</span></span>
@@ -462,26 +463,26 @@ Click here for code examples
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; # A tibble: 20 × 45</span></span>
 <span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt;    case_number date_of_consultation_admiss…¹ patient_origin age_years age_months</span></span>
 <span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;date&gt;                        &lt;chr&gt;              &lt;int&gt;      &lt;int&gt;</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt;  1 A1          2018-02-14                    Village B              5         NA</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt;  2 A2          2018-03-06                    Village A             56         NA</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt;  3 A3          2018-01-20                    Village D             NA          3</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;  4 A4          2018-03-19                    Village D             34         NA</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;  5 A5          2018-01-25                    Village D             47         NA</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;  6 A6          2018-03-11                    Village B             87         NA</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;  7 A7          2018-04-11                    Village C             39         NA</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;  8 A8          2018-04-26                    Village D             24         NA</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;  9 A9          2018-02-15                    Village D             51         NA</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 10 A10         2018-03-02                    Village A             17         NA</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 11 A11         2018-01-23                    Village C             20         NA</span></span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 12 A12         2018-03-05                    Village C             65         NA</span></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 13 A13         2018-02-12                    Village B             13         NA</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 14 A14         2018-02-02                    Village C             38         NA</span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 15 A15         2018-04-17                    Village D             36         NA</span></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 16 A16         2018-01-28                    Village B              7         NA</span></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; 17 A17         2018-03-20                    Village B             88         NA</span></span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; 18 A18         2018-01-09                    Village D             32         NA</span></span>
-<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 19 A19         2018-01-26                    Village B             28         NA</span></span>
-<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 20 A20         2018-03-13                    Village A             59         NA</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt;  1 A1          2018-04-06                    Village A             15         NA</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt;  2 A2          2018-01-28                    Village D             14         NA</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt;  3 A3          2018-02-28                    Village B             72         NA</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;  4 A4          2018-01-25                    Village B             NA         23</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;  5 A5          2018-03-18                    Village C             23         NA</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;  6 A6          2018-03-24                    Village D             11         NA</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;  7 A7          2018-02-27                    Village D             18         NA</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;  8 A8          2018-01-01                    Village D             21         NA</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;  9 A9          2018-04-28                    Village B             18         NA</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 10 A10         2018-03-05                    Village A             19         NA</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 11 A11         2018-01-10                    Village A             51         NA</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 12 A12         2018-04-09                    Village A             72         NA</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 13 A13         2018-03-11                    Village D             40         NA</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 14 A14         2018-01-17                    Village C              5         NA</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 15 A15         2018-02-18                    Village D             19         NA</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; 16 A16         2018-03-09                    Village C             26         NA</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; 17 A17         2018-02-17                    Village B             34         NA</span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; 18 A18         2018-03-24                    Village D              9         NA</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 19 A19         2018-04-23                    Village A             67         NA</span></span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 20 A20         2018-01-02                    Village B             54         NA</span></span>
 <span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt; # ℹ abbreviated name: ¹​date_of_consultation_admission</span></span>
 <span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a><span class="co">#&gt; # ℹ 40 more variables: age_days &lt;int&gt;, sex &lt;fct&gt;, pregnant &lt;fct&gt;,</span></span>
 <span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a><span class="co">#&gt; #   trimester &lt;fct&gt;, foetus_alive_at_admission &lt;fct&gt;, exit_status &lt;fct&gt;,</span></span>
@@ -527,26 +528,26 @@ Click here for code examples
 <span id="cb4-75"><a href="#cb4-75" tabindex="-1"></a><span class="co">#&gt; # A tibble: 20 × 45</span></span>
 <span id="cb4-76"><a href="#cb4-76" tabindex="-1"></a><span class="co">#&gt;    case_number date_of_consultation_admiss…¹ patient_origin age_years age_months</span></span>
 <span id="cb4-77"><a href="#cb4-77" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;       &lt;date&gt;                        &lt;chr&gt;              &lt;int&gt;      &lt;int&gt;</span></span>
-<span id="cb4-78"><a href="#cb4-78" tabindex="-1"></a><span class="co">#&gt;  1 A1          2018-02-14                    Village B              5         NA</span></span>
-<span id="cb4-79"><a href="#cb4-79" tabindex="-1"></a><span class="co">#&gt;  2 A2          2018-03-06                    Village A             56         NA</span></span>
-<span id="cb4-80"><a href="#cb4-80" tabindex="-1"></a><span class="co">#&gt;  3 A3          2018-01-20                    Village D             NA          3</span></span>
-<span id="cb4-81"><a href="#cb4-81" tabindex="-1"></a><span class="co">#&gt;  4 A4          2018-03-19                    Village D             34         NA</span></span>
-<span id="cb4-82"><a href="#cb4-82" tabindex="-1"></a><span class="co">#&gt;  5 A5          2018-01-25                    Village D             47         NA</span></span>
-<span id="cb4-83"><a href="#cb4-83" tabindex="-1"></a><span class="co">#&gt;  6 A6          2018-03-11                    Village B             87         NA</span></span>
-<span id="cb4-84"><a href="#cb4-84" tabindex="-1"></a><span class="co">#&gt;  7 A7          2018-04-11                    Village C             39         NA</span></span>
-<span id="cb4-85"><a href="#cb4-85" tabindex="-1"></a><span class="co">#&gt;  8 A8          2018-04-26                    Village D             24         NA</span></span>
-<span id="cb4-86"><a href="#cb4-86" tabindex="-1"></a><span class="co">#&gt;  9 A9          2018-02-15                    Village D             51         NA</span></span>
-<span id="cb4-87"><a href="#cb4-87" tabindex="-1"></a><span class="co">#&gt; 10 A10         2018-03-02                    Village A             17         NA</span></span>
-<span id="cb4-88"><a href="#cb4-88" tabindex="-1"></a><span class="co">#&gt; 11 A11         2018-01-23                    Village C             20         NA</span></span>
-<span id="cb4-89"><a href="#cb4-89" tabindex="-1"></a><span class="co">#&gt; 12 A12         2018-03-05                    Village C             65         NA</span></span>
-<span id="cb4-90"><a href="#cb4-90" tabindex="-1"></a><span class="co">#&gt; 13 A13         2018-02-12                    Village B             13         NA</span></span>
-<span id="cb4-91"><a href="#cb4-91" tabindex="-1"></a><span class="co">#&gt; 14 A14         2018-02-02                    Village C             38         NA</span></span>
-<span id="cb4-92"><a href="#cb4-92" tabindex="-1"></a><span class="co">#&gt; 15 A15         2018-04-17                    Village D             36         NA</span></span>
-<span id="cb4-93"><a href="#cb4-93" tabindex="-1"></a><span class="co">#&gt; 16 A16         2018-01-28                    Village B              7         NA</span></span>
-<span id="cb4-94"><a href="#cb4-94" tabindex="-1"></a><span class="co">#&gt; 17 A17         2018-03-20                    Village B             88         NA</span></span>
-<span id="cb4-95"><a href="#cb4-95" tabindex="-1"></a><span class="co">#&gt; 18 A18         2018-01-09                    Village D             32         NA</span></span>
-<span id="cb4-96"><a href="#cb4-96" tabindex="-1"></a><span class="co">#&gt; 19 A19         2018-01-26                    Village B             28         NA</span></span>
-<span id="cb4-97"><a href="#cb4-97" tabindex="-1"></a><span class="co">#&gt; 20 A20         2018-03-13                    Village A             59         NA</span></span>
+<span id="cb4-78"><a href="#cb4-78" tabindex="-1"></a><span class="co">#&gt;  1 A1          2018-04-06                    Village A             15         NA</span></span>
+<span id="cb4-79"><a href="#cb4-79" tabindex="-1"></a><span class="co">#&gt;  2 A2          2018-01-28                    Village D             14         NA</span></span>
+<span id="cb4-80"><a href="#cb4-80" tabindex="-1"></a><span class="co">#&gt;  3 A3          2018-02-28                    Village B             72         NA</span></span>
+<span id="cb4-81"><a href="#cb4-81" tabindex="-1"></a><span class="co">#&gt;  4 A4          2018-01-25                    Village B             NA         23</span></span>
+<span id="cb4-82"><a href="#cb4-82" tabindex="-1"></a><span class="co">#&gt;  5 A5          2018-03-18                    Village C             23         NA</span></span>
+<span id="cb4-83"><a href="#cb4-83" tabindex="-1"></a><span class="co">#&gt;  6 A6          2018-03-24                    Village D             11         NA</span></span>
+<span id="cb4-84"><a href="#cb4-84" tabindex="-1"></a><span class="co">#&gt;  7 A7          2018-02-27                    Village D             18         NA</span></span>
+<span id="cb4-85"><a href="#cb4-85" tabindex="-1"></a><span class="co">#&gt;  8 A8          2018-01-01                    Village D             21         NA</span></span>
+<span id="cb4-86"><a href="#cb4-86" tabindex="-1"></a><span class="co">#&gt;  9 A9          2018-04-28                    Village B             18         NA</span></span>
+<span id="cb4-87"><a href="#cb4-87" tabindex="-1"></a><span class="co">#&gt; 10 A10         2018-03-05                    Village A             19         NA</span></span>
+<span id="cb4-88"><a href="#cb4-88" tabindex="-1"></a><span class="co">#&gt; 11 A11         2018-01-10                    Village A             51         NA</span></span>
+<span id="cb4-89"><a href="#cb4-89" tabindex="-1"></a><span class="co">#&gt; 12 A12         2018-04-09                    Village A             72         NA</span></span>
+<span id="cb4-90"><a href="#cb4-90" tabindex="-1"></a><span class="co">#&gt; 13 A13         2018-03-11                    Village D             40         NA</span></span>
+<span id="cb4-91"><a href="#cb4-91" tabindex="-1"></a><span class="co">#&gt; 14 A14         2018-01-17                    Village C              5         NA</span></span>
+<span id="cb4-92"><a href="#cb4-92" tabindex="-1"></a><span class="co">#&gt; 15 A15         2018-02-18                    Village D             19         NA</span></span>
+<span id="cb4-93"><a href="#cb4-93" tabindex="-1"></a><span class="co">#&gt; 16 A16         2018-03-09                    Village C             26         NA</span></span>
+<span id="cb4-94"><a href="#cb4-94" tabindex="-1"></a><span class="co">#&gt; 17 A17         2018-02-17                    Village B             34         NA</span></span>
+<span id="cb4-95"><a href="#cb4-95" tabindex="-1"></a><span class="co">#&gt; 18 A18         2018-03-24                    Village D              9         NA</span></span>
+<span id="cb4-96"><a href="#cb4-96" tabindex="-1"></a><span class="co">#&gt; 19 A19         2018-04-23                    Village A             67         NA</span></span>
+<span id="cb4-97"><a href="#cb4-97" tabindex="-1"></a><span class="co">#&gt; 20 A20         2018-01-02                    Village B             54         NA</span></span>
 <span id="cb4-98"><a href="#cb4-98" tabindex="-1"></a><span class="co">#&gt; # ℹ abbreviated name: ¹​date_of_consultation_admission</span></span>
 <span id="cb4-99"><a href="#cb4-99" tabindex="-1"></a><span class="co">#&gt; # ℹ 40 more variables: age_days &lt;int&gt;, sex &lt;fct&gt;, pregnant &lt;fct&gt;,</span></span>
 <span id="cb4-100"><a href="#cb4-100" tabindex="-1"></a><span class="co">#&gt; #   trimester &lt;fct&gt;, foetus_alive_at_admission &lt;fct&gt;, exit_status &lt;fct&gt;,</span></span>
